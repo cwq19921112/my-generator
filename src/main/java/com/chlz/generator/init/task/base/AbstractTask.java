@@ -1,6 +1,6 @@
 package com.chlz.generator.init.task.base;
 
-import com.chlz.generator.bean.TaskInfoDto;
+import com.chlz.generator.bean.TaskInfo;
 
 import java.io.Serializable;
 
@@ -9,19 +9,19 @@ import java.io.Serializable;
  */
 public abstract class AbstractTask implements Serializable {
 
-    protected TaskInfoDto taskInfoDto;
+    protected TaskInfo taskInfo;
 
-    public AbstractTask(TaskInfoDto taskInfoDto) {
-        this.taskInfoDto = taskInfoDto;
+    public AbstractTask(TaskInfo taskInfo) {
+        this.taskInfo = taskInfo;
     }
 
     public abstract void run();
 
-    public TaskInfoDto getTaskInfoDto() {
-        return taskInfoDto;
+    public TaskInfo getTaskInfo() {
+        return taskInfo;
     }
 
-    public void setTaskInfoDto(TaskInfoDto taskInfoDto) {
-        this.taskInfoDto = taskInfoDto;
+    public void setTaskInfo(TaskInfo taskInfo) {
+        this.taskInfo = taskInfo;
     }
 }

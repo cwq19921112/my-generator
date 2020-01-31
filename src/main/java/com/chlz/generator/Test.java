@@ -1,5 +1,6 @@
 package com.chlz.generator;
 
+import com.chlz.generator.config.CommonConfig;
 import com.chlz.generator.constant.CommonCons;
 import com.chlz.generator.init.pom.service.PomInitService;
 import com.chlz.generator.init.pom.service.impl.PropPomInitServiceImpl;
@@ -13,12 +14,19 @@ import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
 
 import java.io.File;
+import java.lang.reflect.Field;
 import java.util.List;
 
 public class Test {
 
-    public static void main(String[] args) {
-        test();
+    public static void main(String[] args) throws Exception{
+//        test();
+        CommonConfig commonConfig = new CommonConfig();
+        Class<? extends CommonConfig> aClass = commonConfig.getClass();
+        Field field = aClass.getDeclaredField("po");
+        field.setAccessible(true);
+        field.set(commonConfig,"demoPo");
+        System.out.println(commonConfig.getPo());
     }
 
     private static void test() {

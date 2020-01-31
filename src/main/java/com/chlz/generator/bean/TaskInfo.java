@@ -5,13 +5,13 @@ import java.util.List;
 /**
  * 执行任务需要的信息
  */
-public class TaskInfoDto {
+public class TaskInfo {
 
     private String tableName;
 
     private String className;
 
-    private List<ColumnInfoDto> columnInfoDtos;
+    private List<ColumnInfo> columnInfos;
 
     public String getTableName() {
         return tableName;
@@ -29,11 +29,11 @@ public class TaskInfoDto {
         this.className = className;
     }
 
-    public List<ColumnInfoDto> getColumnInfoDtos() {
-        return columnInfoDtos;
+    public List<ColumnInfo> getColumnInfos() {
+        return columnInfos;
     }
 
-    public void setColumnInfoDtos(List<ColumnInfoDto> columnInfoDtos) {
-        this.columnInfoDtos = columnInfoDtos;
+    public void setColumnInfos(List<ColumnInfo> columnInfos) {
+        this.columnInfos = columnInfos;
     }
 }

@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * 列信息
  */
-public class ColumnInfoDto implements Serializable {
+public class ColumnInfo implements Serializable {
 
     private String columnName;
 
