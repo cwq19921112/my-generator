@@ -1,11 +1,27 @@
 package com.chlz.generator.utils;
 
+import java.io.File;
+
 public class PathUtil {
 
-    private static final String PATH_DELIMITER = "/";
-
-    public static String appendPath(String parent, String fileName) {
-        return parent + PATH_DELIMITER + fileName;
+    public static String appendPath(String... paths) {
+        String resPath = "";
+        for (String path : paths) {
+            resPath = resPath + File.separator + path;
+        }
+        return resPath;
     }
 
+    public static String package2Path(String packageName) {
+        String path = "";
+        if (StringUtil.isEmpty(packageName)) {
+            return path;
+        }
+
+        String[] packages = packageName.split("\\.");
+        for (String name : packages) {
+            path = path + name + File.separator;
+        }
+        return path;
+    }
 }

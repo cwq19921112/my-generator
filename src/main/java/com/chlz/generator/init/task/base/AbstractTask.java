@@ -1,7 +1,9 @@
 package com.chlz.generator.init.task.base;
 
 import com.chlz.generator.bean.TaskInfo;
+import freemarker.template.TemplateException;
 
+import java.io.IOException;
 import java.io.Serializable;
 
 /**
@@ -15,7 +17,7 @@ public abstract class AbstractTask implements Serializable {
         this.taskInfo = taskInfo;
     }
 
-    public abstract void run();
+    public abstract void run() throws IOException, TemplateException;
 
     public TaskInfo getTaskInfo() {
         return taskInfo;

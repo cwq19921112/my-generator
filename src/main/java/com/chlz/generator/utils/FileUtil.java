@@ -1,9 +1,11 @@
 package com.chlz.generator.utils;
 
+import com.chlz.generator.enums.TemplateTypeEnum;
+import freemarker.template.Template;
+import freemarker.template.TemplateException;
 import org.apache.commons.io.FileUtils;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
 public class FileUtil {
 
@@ -23,6 +25,22 @@ public class FileUtil {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void generateToJava(TemplateTypeEnum typeEnum, Object data, String filePath) throws IOException,
+            TemplateException {
+        File file = new File(filePath);
+        if (file.exists()) {
+            FileUtils.forceDelete(file);
+        }
+
+        Template tpl = TemplateUtil.getTemplate(typeEnum);
+        // 写入文件
+        FileOutputStream fos = new FileOutputStream(filePath);
+        OutputStreamWriter osw = new OutputStreamWriter(fos, "UTF-8");
+        BufferedWriter bw = new BufferedWriter(osw, 1024);
+        tpl.process(data, bw);
+        fos.close();
     }
 
 }

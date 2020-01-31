@@ -21,12 +21,9 @@ public class Test {
 
     public static void main(String[] args) throws Exception{
 //        test();
-        CommonConfig commonConfig = new CommonConfig();
-        Class<? extends CommonConfig> aClass = commonConfig.getClass();
-        Field field = aClass.getDeclaredField("po");
-        field.setAccessible(true);
-        field.set(commonConfig,"demoPo");
-        System.out.println(commonConfig.getPo());
+        File file = new File("D:/c/d/d.java");
+        boolean b = file.mkdirs();
+        System.out.println(b);
     }
 
     private static void test() {
