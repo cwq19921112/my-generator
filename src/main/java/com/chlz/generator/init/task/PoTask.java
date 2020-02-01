@@ -38,7 +38,7 @@ public class PoTask extends AbstractTask {
         CommonConfig commonConfig = ConfigUtil.getCommonConfig();
 
         poData.put("BasePackageName", projectConfig.getBasePackageName());
-        poData.put("EntityPackageName", commonConfig.getPo());
+        poData.put("PoPackageName", commonConfig.getPo());
         poData.put("Author", projectConfig.getAuthor());
         poData.put("Date", new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
         poData.put("ClassName", className);

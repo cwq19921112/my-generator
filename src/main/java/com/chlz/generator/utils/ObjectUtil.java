@@ -9,7 +9,7 @@ public class ObjectUtil {
         try {
             Field field = aClass.getDeclaredField(fieldName);
             field.setAccessible(true);
-            field.set(fieldName, fieldValue);
+            field.set(obj, fieldValue);
         } catch (NoSuchFieldException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {

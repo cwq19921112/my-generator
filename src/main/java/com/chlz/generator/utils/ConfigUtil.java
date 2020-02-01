@@ -8,14 +8,15 @@ import java.util.Properties;
 
 public class ConfigUtil {
 
-    private static CommonConfig commonConfig;
+    private static CommonConfig commonConfig = new CommonConfig();
 
-    private static ProjectConfig projectConfig;
+    private static ProjectConfig projectConfig = new ProjectConfig();
 
     static {
         // 初始化基础配置
         initBaseConfig();
-
+        // 初始化项目配置
+        initProjectConfig();
     }
 
     private static void initBaseConfig() {
